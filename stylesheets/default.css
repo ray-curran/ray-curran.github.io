@@ -1,0 +1,95 @@
+html {
+ 	text-align: center;
+	font-family: Futura;
+}
+
+header {
+    background: url("../imgs/mountaintest5.jpg") ;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    height: 20em;
+    width: 105%;
+    margin: -5em -2em 0em -2em;
+≈
+}
+
+header h1 {
+	padding-top: 2em;
+	font-size: 5em;
+	margin-left: -1em;
+}
+
+nav {
+	background-color: #4C93BA;
+	display: inline;
+}
+
+
+nav a:first-child {
+	margin-left: -3em;
+}
+
+nav a {
+	padding: .25em 1em .25em 1em;
+	text-decoration: none;
+	/*border: 1px solid #87852A;*/
+	border-radius: 5px;
+	color: white;
+	background-color: #a81e25;
+	margin: 5px;
+}
+
+nav a:hover {
+	/*background-color: #6D6C27;*/
+	background-color: #4F5460;
+}
+
+section {
+	background-color: #4C93BA;
+	width: 105%;
+	margin-left: -1em;
+	text-align: center;
+	margin-top: -2em;
+	height: 12em;
+	font-size: 2em;
+}
+ 
+ section > p:first-child {
+ 	padding-top: 3em;
+ }
+
+ section > p {
+ 	margin-left: -2.5em;
+ }
+
+ footer {
+ 	/*background-color: #C5646A;*/
+ 	background-color: #F96B4F;
+ 	height: 150px;
+ 	width: 105%;
+ 	margin: -2em -2em 0em -2em;
+ }
+
+ footer img {
+ 	height: 50px;
+ 	width: 50px;
+ 	margin-top: 1.5em;
+ 	border-radius: 50%;
+ 	background-color: black;
+ 	margin-right: 1em;
+ 	 }
+
+ footer img:hover {
+ 	background-color: #484848;
+ }
+
+ footer a:first-child {
+ 	margin-left: -4em;
+ }
+
+ footer a {
+ 	margin-top: .5em;
+ 	margin-bottom: .5em;
+ }
