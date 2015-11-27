@@ -3,73 +3,86 @@ html {
 	font-family: Futura;
 }
 
-header {
-    background: url("../imgs/mountaintest5.jpg") ;
-    -webkit-background-size: cover; /* For WebKit*/
-    -moz-background-size: cover;    /* Mozilla*/
-    -o-background-size: cover;      /* Opera*/
-    background-size: cover;         /* Generic*/
-    height: 20em;
-    width: 105%;
-    margin: -5em -2em 0em -2em;
-≈
+
+header img {
+	height: 20em;
+	margin: auto;
+	opacity: .7;
+	position: static;
+	border-radius: 5px;
+	width: 100%;
 }
 
 header h1 {
-	padding-top: 2em;
 	font-size: 5em;
-	margin-left: -1em;
+	opacity: 5;
+	position: relative;
+	margin-top: -2em;
+	margin-bottom: .85em;
 }
 
 nav {
-	background-color: #4C93BA;
 	display: inline;
-}
-
-
-nav a:first-child {
-	margin-left: -3em;
 }
 
 nav a {
 	padding: .25em 1em .25em 1em;
 	text-decoration: none;
-	/*border: 1px solid #87852A;*/
-	border-radius: 5px;
-	color: white;
-	background-color: #a81e25;
+	background-color: #A15F48;
 	margin: 5px;
+	color: white;
+	border-radius: 3px;
 }
 
 nav a:hover {
-	/*background-color: #6D6C27;*/
 	background-color: #4F5460;
 }
 
 section {
-	background-color: #4C93BA;
-	width: 105%;
-	margin-left: -1em;
-	text-align: center;
-	margin-top: -2em;
-	height: 12em;
-	font-size: 2em;
+	height: 15em;
+	display: inline;
+	margin: auto;
+	border-radius: 3px;
 }
- 
- section > p:first-child {
- 	padding-top: 3em;
- }
 
- section > p {
- 	margin-left: -2.5em;
- }
+section  p {
+	font-size: 3.5em;
+	width: 48%;
+	margin: auto;
+	padding-top: 1.5em;
+}
+
+section > div {
+	width: 50%;
+	text-align: center;
+	height: 20em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	background-color: black;
+	color: white;
+	opacity: .8;
+}
+
+section img {
+	height: 100%;
+	width: 100%;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
 
  footer {
- 	/*background-color: #C5646A;*/
- 	background-color: #F96B4F;
  	height: 150px;
- 	width: 105%;
- 	margin: -2em -2em 0em -2em;
+ 	background-color: #4855A1;
+ 	width: 100%;
+ 	margin: auto;
+ 	border-radius: 3px;
+ 	clear: both;
  }
 
  footer img {
@@ -83,13 +96,4 @@ section {
 
  footer img:hover {
  	background-color: #484848;
- }
-
- footer a:first-child {
- 	margin-left: -4em;
- }
-
- footer a {
- 	margin-top: .5em;
- 	margin-bottom: .5em;
  }
