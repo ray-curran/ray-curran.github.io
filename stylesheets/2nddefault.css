@@ -1,13 +1,14 @@
 html {
  	text-align: center;
 	font-family: Futura;
+	background-color: #D2CECC;
 }
 
 
 header img {
 	height: 20em;
 	margin: auto;
-	opacity: .7;
+	opacity: .9;
 	position: static;
 	border-radius: 5px;
 	width: 100%;
