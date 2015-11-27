@@ -1,0 +1,10 @@
+article {
+	display: inline-block;
+	margin-top:1em;
+}
+
+article img {
+	height: 15em;
+	width: 15em;
+	margin-bottom: 1em;
+}
