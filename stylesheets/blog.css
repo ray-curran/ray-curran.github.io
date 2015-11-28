@@ -56,3 +56,21 @@ h3 {
 	font-size: 1.5em;
 	margin: 0 auto;
 }
+
+article > div {
+	width: 33%;
+	float:left;
+	margin-left: 45%;
+}
+
+.postpic {
+	display: table;
+}
+
+.pad {
+	width: 320px;
+	height: 50px;
+	margin-top:1em;
+	margin-bottom:-1em;
+}
+
