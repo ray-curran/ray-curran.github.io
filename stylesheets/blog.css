@@ -60,11 +60,13 @@ h3 {
 article > div {
 	width: 33%;
 	float:left;
-	margin-left: 45%;
+	margin:auto;
 }
 
 .postpic {
-	display: table;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .pad {
