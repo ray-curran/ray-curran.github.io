@@ -1,0 +1,70 @@
+<!doctype HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../stylesheets/2nddefault.css">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+<title>Week 4: Arrays vs. Hashes</title>
+</head>
+<body>
+    <header>
+        <img src="../imgs/mountaintest6.jpg">
+        <h1>Ray Curran</h1>
+    </header>
+    <nav class="nav-bar">
+        <a href="http://ray-curran.github.io">Home</a>
+        <a href="http://ray-curran.github.io/about">About</a>
+        <a href="http://ray-curran.github.io/blog">Blog</a>
+        <a href="http://ray-curran.github.io/projects">Projects</a>
+        <a href="mailto:rpcurr@gmail.com">Contact</a>
+    </nav>
+    <br>
+    <section class="post">
+        <h2>Arrays vs. Hashes</h2>
+        <h3>December 4, 2015</h3>
+        <article>
+            <p>
+                Hi again, readers! This week we moved on from html/css and are diving right into ruby. This has been a bit overwhelming, but good to start getting some practice breaking problems down into smaller parts. 
+            </p>
+            <p>
+                We started with the basics this week: how to store data that can be accessed again. In the simplest form, there are variables, which are element that store one piece of information (e.g. a string or a number). Unfortunately, that can only get us so far. What if we wanted to store multiple strings, numbers, or a combination of data elements together in one place? Turns out we have a couple options for something like this: arrays and hashes. These two are similar, so I want to quickly walk through each and make some recommendations. 
+            </p>
+            <p>
+                First off we have arrays! Arrays are kind of like lists. In the example below, I've made a list of some words that make me feel good. Instead of saving each one to a separate variable (like word_1, word_2, etc) and having to remember where I stored all those, I can add them all to a single array so they're stored in one place. You're probably asking yourself how we could then go back to access those values. If so, you're in luck! When you add an element to an array, it automatically assigns it a numerical index, starting with 0. To access it, we'd use the format <strong>array_name[index]</strong>. So in our example, "bacon" has an index of 0. If we wanted to access it, we could just type <strong>favorite_words[0]</strong>. We could also use some built-in ruby iteration methods (like each or times) to run through each item in the list. You can imagine how much quicker this would be than going through lots of variables for long lists. 
+            </p>
+            <pre><code>
+favorite_words = ["bacon","cheese","carbs"]
+            </pre></code>
+            <p>
+                Arrays are great, right? But what if you had a long list of words and wanted to remember how to access each one? Are you always going to remember that "salami" is at index 15? Probably not. Hashes can store multiple values just like arrays, but you can assign your own keys instead of automatically assigning numbers. Hashes help solve this problem. In some other programming languages, hashes are called dictionaries, which are a great way to think about them. In the example below, I've created the hash <strong>favorite_foods</strong>, and added three personal definitions of three of my favorite words with the words as the keys. Now, whenever I want to access the definition in my hash, I can just use the key (i.e. <strong>favorite_foods['bacon']</strong> would give us <strong>"delicious breakfast/all time of day meat"</strong>). This is much easier than trying to recall what number relates to which item. 
+            </p>
+                        <pre><code>
+favorite_words = {<br>
+  bacon: "delicious breakfast/all time of day meat",<br>
+  cheese: "dairy product that increases deliciousness of most meals",<br>
+  carbs: " wonderful type of food that some people try to avoid"<br>
+}
+            </pre></code>
+            <p>
+                As you may have noticed, hashes are much better when you have a list of items that are related, or where the order of each matters. It can be much simpler to remember how to call a specific item in the hash than in an array. If you're just trying to form a list and run through it, then a hash may be a little too much work to create/manage. Arrays will be quicker and easier to run through. 
+            </p>
+            <p>
+                Well, that's all for me this week. I hope this info was helpful. As always, if you have questions or feedback, feel free to email me using the Contact link above!
+            </p>
+
+        </article>
+    </section>
+    <aside>
+    <nav id="navblock">
+        <a class="blog-nav" href="http://ray-curran.github.io/blog/css-concepts.html">Previous Post: Borders, Padding, Margin</a>     
+        <a class="blog-nav" href="#">Next Post</a>
+    </nav>
+    <img class="sideface" src ="../imgs/rayface.JPG" />
+    </aside>
+    <footer>
+        <a href="https://github.com/ray-curran"><img src="../imgs/graygithub.png"/></a>
+        <a href="https://www.linkedin.com/in/raycurran"><img src="../imgs/graylinkedin.png"/></a>
+        <a href="https://www.facebook.com/betterthanamango"><img src="../imgs/grayface.png"/></a>
+        <a href="https://twitter.com/bettrthanamango"><img src="../imgs/graytwitter.png"/></a>
+    </footer>
+</body>
+</html>

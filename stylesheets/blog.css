@@ -82,3 +82,12 @@ ul {
 li {
 	font-size: .75em;
 }
+
+pre {
+	background-color: black;
+	color: white;
+	padding: .5em;
+	margin: 1em auto 1em auto;
+	display: table;
+	text-align: left;
+}
