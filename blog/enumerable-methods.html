@@ -1,0 +1,131 @@
+<!doctype HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../stylesheets/2nddefault.css">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+<title>Week 5: Enumerable#cycle</title>
+</head>
+<body>
+    <header>
+        <img src="../imgs/mountaintest6.jpg">
+        <h1>Ray Curran</h1>
+    </header>
+    <nav class="nav-bar">
+        <a href="http://ray-curran.github.io">Home</a>
+        <a href="http://ray-curran.github.io/about">About</a>
+        <a href="http://ray-curran.github.io/blog">Blog</a>
+        <a href="http://ray-curran.github.io/projects">Projects</a>
+        <a href="mailto:rpcurr@gmail.com">Contact</a>
+    </nav>
+    <br>
+    <section class="post">
+        <h2>Enumerable#cycle</h2>
+        <h3>December 12, 2015</h3>
+        <article>
+            <p>
+                Hello, loyal fans. Thanks for returning. As a special treat this week, I'm going to give you an in-depth explanation of some of the great uses of the Enumerable#cycle method in Ruby. The ruby docs may give you an overview, but hopefully after reading this you'll learn some cool new things you can do with it. 
+            </p>
+            <p>
+                I'll start with a basic overview of the the method. On its own, it iterates through an array or hash and returns the value of a given code block. It works like the each method in this regard, except by default, cycle will continue running the code block an infinite number of times. To stop this, you can pass it an argument that tells is how many times to cycle through your object or include a "break" statement to tell it where/when to stop. While this may seem like a little too much work when each is fine for you, there are a few tricks to optimize your cycling.
+            </p>
+            <p>
+                Let's kick off an example to make it a little clearer. People living together can have a hard time figuring out who needs to do which chores. Oftentimes they'll create something like a chore wheel or just wait for someone else to do it, but we can make this easier using the cycle method. In the example below, I've created the array <strong>chores</strong> to store our chore list and called the cycle method on it. Since I added the 2 argument, this will cycle through our array twice and list the chore along with a semicolon. While this doesn't solve the problem, it'll at least create a visual list of chores that need to be done for a couple weeks. 
+            </p>
+            <pre><code>
+chores = ["garbage", "dishes", "vaccuum", "cooking", "clean bathroom","walk dog"]
+chores.cycle(2) {|x| puts x + ":"}
+
+# garbage: 
+# dishes: 
+# vaccuum: 
+# cooking: 
+# clean bathroom: 
+# walk dog: 
+# garbage: 
+# dishes: 
+# vaccuum: 
+# cooking: 
+# clean bathroom: 
+# walk dog: 
+
+            </pre></code>
+            <p>
+                You're probably still not sold on whether cycle is that amazing. We've generated our list of chores, but how do we make sure we're assigning people to them fairly? For this problem, we can couple cycle with the next method. When you save a cycle call to a variable, you can then call the next method on that variable. Each time you call the next method, it will return the next value in the list, and will remember where you were in the list. Let's get back to our example. 
+            </p>
+            <p>
+                I've created a new array with me and my roommates in it, and saved a cycle call to a new variable. When I call next, you can see that it's giving me a new name each time. Again, while this is a helpful tidbit, it's not a game changer when you are manually calling next each time. It's quicker to just put the names in manually. 
+            </p>
+                        <pre><code>
+roommates = ["suchie", "spencer", "aaron", "ray"]
+roomies = roommates.cycle
+
+puts roomies.next
+#suchie
+puts roomies.next
+#spencer
+puts roomies.next
+#aaron
+            </pre></code>
+            <p>
+                Let's put it all together in a method to see where cycle really shines. The chore_wheel method below takes our list of chores, our variable with our cycle call, and the number of weeks of chores you'd like to generate. Each time it's set to print out a roommate, it selects the next one automatically, creating our list of chores and who needs to complete each one. Huzzah!
+            </p>
+            <pre><code>
+def chore_wheel(chores, roomies, weeks)
+  counter = 1
+  (chores * weeks).each do |x| 
+    if x == "garbage"
+      puts "Week #{counter}"
+      counter +=1
+    end
+    p "#{x}: " + roomies.next
+    end
+end
+
+chore_wheel(chores,roomies,3)
+
+# Week 1 
+# "garbage: aaron" 
+# "dishes: ray" 
+# "vaccuum: suchie" 
+# "cooking: spencer" 
+# "clean bathroom: aaron" 
+# "walk dog: ray" 
+# Week 2 
+# "garbage: suchie" 
+# "dishes: spencer" 
+# "vaccuum: aaron" 
+# "cooking: ray" 
+# "clean bathroom: suchie" 
+# "walk dog: spencer" 
+# Week 3 
+# "garbage: aaron" 
+# "dishes: ray" 
+# "vaccuum: suchie" 
+# "cooking: spencer" 
+# "clean bathroom: aaron" 
+# "walk dog: ray"
+            </pre></code>
+            <p>
+                I know what you're thinking: Wow. Isn't this so much better than spinning a wheel on your fridge? I don't know. Is it easier than talking to your roommates about who should do what each week? I'm not sure. Is this example a little silly? Definitely. 
+            </p>
+            <p>
+                Even though this example may not have truly made life easier, I hope it illustrated how you can use the cycle method to iterate through objects later on. As always, feel free to contact me with questions or comments!
+            </p>
+
+        </article>
+    </section>
+    <aside>
+    <nav id="navblock">
+        <a class="blog-nav" href="http://ray-curran.github.io/blog/arrays-hashes.html">Previous Post: Arrays vs. Hashes</a>     
+        <a class="blog-nav" href="#">Next Post</a>
+    </nav>
+    <img class="sideface" src ="../imgs/rayface.JPG" />
+    </aside>
+    <footer>
+        <a href="https://github.com/ray-curran"><img src="../imgs/graygithub.png"/></a>
+        <a href="https://www.linkedin.com/in/raycurran"><img src="../imgs/graylinkedin.png"/></a>
+        <a href="https://www.facebook.com/betterthanamango"><img src="../imgs/grayface.png"/></a>
+        <a href="https://twitter.com/bettrthanamango"><img src="../imgs/graytwitter.png"/></a>
+    </footer>
+</body>
+</html>
