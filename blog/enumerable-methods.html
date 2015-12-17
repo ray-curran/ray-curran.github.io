@@ -32,7 +32,8 @@
                 Let's kick off an example to make it a little clearer. People living together can have a hard time figuring out who needs to do which chores. Oftentimes they'll create something like a chore wheel or just wait for someone else to do it, but we can make this easier using the cycle method. In the example below, I've created the array <strong>chores</strong> to store our chore list and called the cycle method on it. Since I added the 2 argument, this will cycle through our array twice and list the chore along with a semicolon. While this doesn't solve the problem, it'll at least create a visual list of chores that need to be done for a couple weeks. 
             </p>
             <pre><code>
-chores = ["garbage", "dishes", "vaccuum", "cooking", "clean bathroom","walk dog"]
+chores = ["garbage", "dishes", "vaccuum", "cooking",
+         "clean bathroom","walk dog"]
 chores.cycle(2) {|x| puts x + ":"}
 
 # garbage: 
