@@ -1,0 +1,113 @@
+<!doctype HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../stylesheets/2nddefault.css">
+<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+<title>Week 6: Ruby Classes</title>
+</head>
+<body>
+    <header>
+        <img src="../imgs/mountaintest6.jpg">
+        <h1>Ray Curran</h1>
+    </header>
+    <nav class="nav-bar">
+        <a href="http://ray-curran.github.io">Home</a>
+        <a href="http://ray-curran.github.io/about">About</a>
+        <a href="http://ray-curran.github.io/blog">Blog</a>
+        <a href="http://ray-curran.github.io/projects">Projects</a>
+        <a href="mailto:rpcurr@gmail.com">Contact</a>
+    </nav>
+    <br>
+    <section class="post">
+        <h2>Ruby Classes</h2>
+        <h3>December 18, 2015</h3>
+        <article>
+            <p>
+               And we're back! With another important element of Ruby: the class. This fits our theme of the past few weeks, since classes can drastically decrease the amount of work you (and your system) will need to do when completing repetitive tasks.  
+            </p>
+            <p>
+                Classes are like basic layouts of similar objects. If you were going to create several Dog objects, for example, you know they all have a breed and they all can bark. You could individually create all of these dogs and give them all a method that lets them bark, or you can create a class that gives all new dogs the method automatically. Let's kick off our week's example. 
+            </p>
+            <p>
+                In the example below, I've created a class Car. To create a new class, you just need to use the "class" keyword and an initialize method. The initialize method determines what variables each new object in the class is assigned. In this case, we've given it several: the car's make, model, gas in its tank, and the miles per gallon. You've probably noticed that within the initialize method, I've saved all these arguments to variables with an @ symbol before them. These are called instance variables, and as the name entails, this creates a separate variable for each object in the class. So if I create a my_car and a your_car object in the Car class, each one has its own make and year variable that can be accessed anywhere within the class. 
+            </p>
+            <p>
+                The last line in this example actually creates two objects in my Car class. Notice that since I set defaults for gas_in_tank and mpg, I don't need to explicitly set those unless I want to make a change. 
+            </p>
+            <pre><code>
+class Car 
+  def initialize(make,year,gas_in_tank = 15,mpg = 20)
+    @make = make
+    @year = year
+    @gas_in_tank = gas_in_tank
+    @mpg = mpg
+  end
+end
+
+my_car = Car.new("Jeep",2013)
+your_car = Car.new("Chevy",2014)
+            </pre></code>
+            <p>
+                 While it's great that I can create objects with variables in it, this probably still seems a little bit weak. We really get into a the meat of classes when we add methods built into each one. Below, I've added two methods, which I'll describe individually since they behave a little differently. 
+            </p>
+            <p>
+                 The first I've added here is the rev_engine method (one note is that I'd be saving these within the class, but leaving those steps out for brevity's sake). This one is the same for all objects in the car class, so we just need to add whatever action we want to perform any time it's called. Notice that when I call it on both my_car and your_car, it produces the same result. I have already saved myself time by not having to define the method individually for each object. Imagine how much time I'd save if I was creating several cars all at the same time!
+            </p>
+            <p>
+                The second method I've added here is the describe_car method. When I add this to the class, both of my objects gain access to the method, but notice that each one puts its own version of the statement. Again, saving time while keeping it customized to the individual object. Pretty cool, right?! 
+            </p>
+            <pre><code>
+def rev_engine
+  puts "Vroom VROOM!"
+end
+
+my_car.rev_engine
+# Vroom VROOM!
+your_car.rev_engine
+# Vroom VROOM!
+
+def describe_car
+  puts "This car is a #{@year} #{@make}!"
+end
+
+my_car.describe_car
+# This car is a 2013 Jeep! 
+your_car.describe_car
+# This car is a 2014 Chevy! 
+            </pre></code>
+            <p>
+                One last thing you can do is edit the instance variables within the different methods in a class. Let's say you want to know how much gas it takes out of your tank when you drive to a certain location. I've made the drive method below for this example. I can use the same instance variable I created in the initialize method, and it's actually storing it in the same location. I don't need to create a new local variable in this case, which makes it much easier to access/edit the same information. When I call the method on my_car, it uses the original gas_in_tank and mpg variables to determine the new value for gas_in_tank. 
+            </p>
+            <pre><code>
+def drive(miles)
+  @gas_in_tank -= (miles/@mpg)
+  puts "You have #{@gas_in_tank} gallons left in your tank."
+end
+
+my_car.drive(60)
+# You have 12 gallons left in your tank. 
+            </pre></code>
+            <p>
+                That's about it for this week. To wrap up, classes can help you save time by avoiding repetition within your programming. Each time you create a new object in the class, it inherits the variables and methods you create within it. In larger programs, this will make a big difference. 
+            </p>
+            <p>
+                This was also a pretty light example. You can image that a car can do much more than drive and honk its horn. We could have created methods to fill up the gas, determine whether it needs an oil change, etc. Classes are a great way to represent types of real life objects that behave similarly. If you have more questions or comments about this info, let me know using the contact link above!
+            </p>
+
+        </article>
+    </section>
+    <aside>
+    <nav id="navblock">
+        <a class="blog-nav" href="http://ray-curran.github.io/blog/enumerable-methods.html">Previous Post: Enumerable#class</a>     
+        <a class="blog-nav" href="#">Next Post</a>
+    </nav>
+    <img class="sideface" src ="../imgs/rayface.JPG" />
+    </aside>
+    <footer>
+        <a href="https://github.com/ray-curran"><img src="../imgs/graygithub.png"/></a>
+        <a href="https://www.linkedin.com/in/raycurran"><img src="../imgs/graylinkedin.png"/></a>
+        <a href="https://www.facebook.com/betterthanamango"><img src="../imgs/grayface.png"/></a>
+        <a href="https://twitter.com/bettrthanamango"><img src="../imgs/graytwitter.png"/></a>
+    </footer>
+</body>
+</html>
