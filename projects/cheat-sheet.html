@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SQL cheat sheet</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheets/2nddefault.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css"
+</head>
+<body>
+	<header>
+		<img src="../imgs/mountaintest6.jpg">
+		<h1>SQL Cheat Sheet</h1>
+	</header>
+	<nav class="nav-bar">
+		<a href="http://ray-curran.github.io">Home</a>
+		<a href="http://ray-curran.github.io/about">About</a>
+		<a href="http://ray-curran.github.io/blog">Blog</a>
+		<a href="http://ray-curran.github.io/projects">Projects</a>
+		<a href="mailto:rpcurr@gmail.com">Contact</a>
+	</nav>
+	<br>
+	<article>
+    <section id="heading">
+      <p>SQL is a programming language designed to store data in relational tables. These tables can be linked to each other to for one-to-one, many-to-one, and many-to-many relationships. This cheat sheet displays commands to use when creating SQL queries. In these examples, I will use "table" to refer to a general table title and "column#" to refer to specific columns.</p>
+    </section>
+    </br>
+    <div id="columns">
+      <article>
+        <h2>SELECT ALL DATA FROM A TABLE</h2>
+        <p>The asterisk wildcard in this example tells the system to select all data and all columns from the table listed: </p>
+        <details>
+          <summary><code>SELECT * FROM table;</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>ORDER DATA BY A SPECIFIED COLUMN</h2>
+        <p>To order data by a specific column in ascending order:</p>
+
+        <details>
+          <summary><code>SELECT * FROM table ORDER BY column1;</code></summary>
+        </details>
+
+        <p> To order data by a specific column in descending order:</p>
+        <details>
+          <summary><code>SELECT * FROM table ORDER BY column1 DESC;</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>SELECT DATA THAT MEETS CERTAIN CRITERIA</h2>
+        <p>Find records in a table that meet criteria based on a specific column:</p>
+
+        <details>
+          <summary><code>SELECT * FROM table WHERE column1="searchtext";</code></summary>
+        </details>
+
+        <p>You can also use the % wildcard within a text search to find data that contains the text you're searching for:</p>
+        <details>
+          <summary><code>SELECT * FROM table WHERE column1 LIKE "%search text%";</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>SELECT SPECIFIC COLUMNS FROM A TABLE</h2>
+        <p>List columns instead of using the * wildcard to see only specific data from a table"</p>
+
+        <details>
+          <summary><code>SELECT column1, column2 FROM table;</code></summary>
+        </details>
+
+      </article>
+
+      <article>
+        <h2>GROUP SELECTED DATA IN A TABLE</h2>
+        <p>Group data in your output by matching on a specific column:</p>
+        <summary><code>SELECT * FROM table GROUP BY column1;</code></summary>
+
+      </article>
+
+      <article>
+        <h2>DISPLAY DATA FROM TWO JOINED TABLES</h2>
+        <p>Display all data from two joined tables:</p>
+
+        <details>
+          <summary><code>SELECT * FROM table1 INNER JOIN table2 ON table1.column1=table2.column4;</code></summary>
+        </details>
+
+        <p>Display specific data from two joined tables</p>
+        <details>
+          <summary><code>SELECT table1.column2, table1.column3, table2.column4 FROM table1 INNER JOIN table2 ON table1.column1=table2.column4;</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>FIND DISTINCT DATA FROM TABLE</h2>
+        <p>Display only distinct data in a column from a table:</p>
+
+        <details>
+          <summary><code>SELECT DISTINCT column1 FROM table;</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>UPDATE DATA IN A TABLE WHERE CERTAIN CONDITIONS ARE MET</h2>
+        <p>Specify what columns to change and under what conditions:</p>
+
+        <details>
+          <summary><code>UPDATE table SET column1='replacement text' WHERE column2='search text';</code></summary>
+        </details>
+      </article>
+
+      <article>
+        <h2>DELETE RECORDS IN TABLE THAT MEET CRITERIA</h2>
+        <p>List the criteria and the table to delete records from:</p>
+
+        <details>
+          <summary><code>DELETE FROM table WHERE column1="search text";</code></summary>
+        </details>
+      </article>
+
+</div>
+	</article>
+	<footer>
+		<a href="https://github.com/ray-curran"><img src="../imgs/graygithub.png"/></a>
+		<a href="https://www.linkedin.com/in/raycurran"><img src="../imgs/graylinkedin.png"/></a>
+		<a href="https://www.facebook.com/betterthanamango"><img src="../imgs/grayface.png"/></a>
+		<a href="https://twitter.com/bettrthanamango"><img src="../imgs/graytwitter.png"/></a>
+	</footer>
+</body>
+</html>

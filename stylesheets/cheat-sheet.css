@@ -1,0 +1,47 @@
+* {
+  font-family: Futura;
+  text-align:center;
+}
+
+
+#columns {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+      -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
+    -moz-column-rule: 1px solid lightblue; /* Firefox */
+    column-rule: 1px solid lightblue;
+  width:100%;
+  background-color: #F1F1F1;
+  font-size:1em;
+  padding-bottom: 1em;
+  padding-top:1em;
+}
+
+#heading {
+  width: 100%
+  display:block;
+  font-size: 1.5em;
+}
+
+section p {
+  font-size:1em;
+}
+
+img {
+  width:10%;
+  height:10%;
+} 
+
+li {
+  list-style-position: inside;
+  font-size: 1em;
+}
+
+ul {
+  padding-left:0;
+}
+
+h2 {
+  font-size:1.5em;
+}
