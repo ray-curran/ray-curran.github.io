@@ -91,3 +91,7 @@ pre {
 	display: table;
 	text-align: left;
 }
+
+.lower-start {
+	padding-top:7.5em;
+}
