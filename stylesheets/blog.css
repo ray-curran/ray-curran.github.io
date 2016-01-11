@@ -95,3 +95,19 @@ pre {
 .lower-start {
 	padding-top:7.5em;
 }
+
+#projects {
+	width:75%;
+	font-size:2em;
+	margin-top:0em;
+	margin-bottom:1em;
+}
+
+.project-list {
+	width:50%;
+}
+
+.no-style {
+	list-style:none;
+	text-decoration:none;
+}
