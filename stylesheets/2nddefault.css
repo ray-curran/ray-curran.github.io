@@ -101,3 +101,7 @@ section img {
  footer img:hover {
  	background-color: #484848;
  }
+
+ #make-space {
+  margin-bottom: 10em;
+}

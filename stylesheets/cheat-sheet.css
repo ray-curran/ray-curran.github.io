@@ -18,6 +18,11 @@
   padding-top:1em;
 }
 
+body {
+  margin-bottom: 150px;
+}
+
+
 #heading {
   width: 100%
   display:block;
@@ -31,7 +36,7 @@ section p {
 img {
   width:10%;
   height:10%;
-} 
+}
 
 li {
   list-style-position: inside;
@@ -45,3 +50,4 @@ ul {
 h2 {
   font-size:1.5em;
 }
+

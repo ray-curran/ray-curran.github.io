@@ -15,7 +15,7 @@ article img {
 	float:left;
 	margin-top:2em;
 	margin-left:5%;
-	margin-bottom: 2em;
+	margin-bottom: 10em;
 	background-color: #D3D3D3;
 	border-radius: 3px;
 	padding-bottom: 1em;
@@ -111,3 +111,4 @@ pre {
 	list-style:none;
 	text-decoration:none;
 }
+
