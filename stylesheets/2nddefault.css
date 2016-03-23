@@ -85,6 +85,8 @@ section img {
  	margin: auto;
  	border-radius: 3px;
  	clear: both;
+  position: fixed;
+  bottom: 0;
  }
 
  footer img {
