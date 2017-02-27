@@ -1,1 +1,0 @@
-# ray-curran.github.io
