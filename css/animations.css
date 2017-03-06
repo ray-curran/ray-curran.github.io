@@ -1098,7 +1098,7 @@ form label.uppercase {
 }
 
 .fade .content {
-  background:rgba(17,19,20,0.6);
+  background:rgba(17,19,20,0.7);
   outline:2px solid rgba(17,19,20,0.6);
 }
 
@@ -3126,6 +3126,22 @@ img.zoom-img {
 .animated.slow .animate [class*="ae-"]:not(.done) {
   -webkit-transition-duration:1s;
   transition-duration:1s;
+}
+
+.projects img {
+  border-radius: 3%;
+}
+
+.projects li h1 {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.projects li small {
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-size: 17px;
 }
 
 /* delays */
